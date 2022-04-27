@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class playerControls : MonoBehaviour
 {
+    //Post Processing GameObjects
+    public GameObject normalVision;
+    public GameObject ghostVision;
+
     //Attack 
     int Damage = 10;
     int AttackRange = 2;
@@ -101,11 +105,17 @@ public class playerControls : MonoBehaviour
             isDead = false;
             rend.material = Mortal_Mat;
             CurrentStateTxt.text = "Current form: Mortal";
+            //Sets Ghost vision to false and Normal vision to true
+            ghostVision.SetActive(false);
+            normalVision.SetActive(true);
 
         } else{
             isDead = true;
             CurrentStateTxt.text = "Current form: Ghost";
             rend.material = Ghost_Mat;
+            //Sets Normal vision to false and Ghost vision to true
+            ghostVision.SetActive(true);
+            normalVision.SetActive(false);
 
         }
     }
