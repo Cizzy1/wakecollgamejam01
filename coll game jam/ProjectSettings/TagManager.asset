@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NoWalkWall
   - walkable
+  - Totem
   layers:
   - Default
   - TransparentFX
